@@ -6,11 +6,12 @@ import (
 )
 
 func main() {
-//	fmt.Println("helo")
+	//	fmt.Println("helo")
 	var wg sync.WaitGroup
+
 	wg.Add(5)
-	
-	for i:=0; i<5; i++ {
+
+	for i := 0; i < 5; i++ {
 		go func() {
 			fmt.Println(i)
 			wg.Done()
@@ -19,8 +20,8 @@ func main() {
 	wg.Wait()
 }
 
-func MaxInt (a,b int) int {
-	if a>=b {
+func MaxInt(a, b int) int {
+	if a >= b {
 		return a
 	}
 	return b
