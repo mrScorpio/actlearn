@@ -5,7 +5,7 @@ import (
 )
 
 func TestMaxInt(t *testing.T) {
-	a, b := 22, 7
+	a, b := 2, 7
 
 	res := MaxInt(a, b)
 
