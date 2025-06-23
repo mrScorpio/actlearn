@@ -1,7 +1,9 @@
 package main
 
+import "fmt"
+
 func main() {
-	//	fmt.Println("helo")
+	fmt.Println(hello())
 }
 
 func MaxInt(a, b int) int {
@@ -9,4 +11,8 @@ func MaxInt(a, b int) int {
 		return a
 	}
 	return b
+}
+
+func hello() string {
+	return "Hello go"
 }

@@ -14,6 +14,12 @@ func TestMaxInt(t *testing.T) {
 	}
 }
 
-func TestMain(t *testing.T) {
-	main()
+func TestHello(t *testing.T) {
+	want := "Hello Go"
+
+	got := hello()
+
+	if want != got {
+		t.Fatalf("want %s, got %s", want, got)
+	}
 }
