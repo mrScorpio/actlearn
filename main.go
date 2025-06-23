@@ -3,5 +3,12 @@ package main
 import "fmt"
 
 func main() {
-	fmt.Println("helo")
+//	fmt.Println("helo")
+}
+
+func MaxInt (a,b, int) int {
+	if a>=b {
+		return a
+	}
+	return b
 }
