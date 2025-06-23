@@ -6,7 +6,7 @@ func main() {
 //	fmt.Println("helo")
 }
 
-func MaxInt (a,b, int) int {
+func MaxInt (a,b int) int {
 	if a>=b {
 		return a
 	}
