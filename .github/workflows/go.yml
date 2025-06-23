@@ -1,13 +1,13 @@
 # This workflow will build a golang project
 # For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-go
 
-name: Go
+name: myAction
 
 on:
   push:
     branches: [ "master" ]
-  pull_request:
-    branches: [ "master" ]
+#  pull_request:
+#    branches: [ "master" ]
 
 jobs:
 
@@ -23,6 +23,32 @@ jobs:
 
     - name: Build
       run: go build -v ./...
-
+      
+  tests:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-go@v4
+    
     - name: Test
       run: go test -v ./...
+
+  tests-race:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-go@v4
+
+    - name: TestRace
+      run: go test -race -v ./...
+
+  lint:
+    needs: [tests,tests-race]
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-go@v4
+    - uses: golangci/golangci-lint-action@v3
+    
