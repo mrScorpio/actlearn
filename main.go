@@ -14,5 +14,5 @@ func MaxInt(a, b int) int {
 }
 
 func hello() string {
-	return "Hello go"
+	return "Hello Go"
 }
